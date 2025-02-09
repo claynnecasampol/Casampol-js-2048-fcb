@@ -1,0 +1,261 @@
+/*Tag Selector*/
+/*font-family - specifies the style of the text font*/
+/*text-align - determines how the text is horizontally aligned within its container*/
+/*Max-width - maximum width or the maximum size of the elements is allow to have*/
+body {
+    font-family: Arial, Helvetica, sans-serif; /*Back-up style if the 1st or 2nd not available*/
+    text-align: center;
+    color: #b01944;
+}
+
+hr {
+    max-width: 480px;
+    border: 1px solid #680614
+}
+
+/*id selector = #name {}*/
+#board {
+    background-color: rgb(104, 13, 43);/*Background color defines the color of the bg*/
+    width: 399px;
+    height: 400px;
+    margin: 0 auto;/*margin controls the spacing around the element*/
+    border: 6px solid rgb(200, 24, 92);
+
+    display: flex;
+    flex-wrap: wrap; /*will specify how flex items will wrap when they exceed the containers widdth*/
+}
+
+/*class selector = .name {}*/
+/*justify-content and align items will work if we have the display: flex*/
+.tile {
+    width: 90px;
+    height: 90px;
+    border: 5px solid rgb(200, 24, 92);
+    display: inline-block;/*display flex - turns elements into flexible container*/
+    justify-content: center; /*x-axis*/
+    align-items: center;/*y-axis*/
+    font-size: 40px;
+    margin: 0;
+    position: relative;
+    padding: 0;
+}
+
+.x2 {
+    background-color: #fa58cc;
+    background-image: var(--background-image-url-02);
+    background-size: 100% 100%;
+    color: rgba(0, 0, 0, 0);
+}
+
+.x4{
+    background-color: #e1169a;
+    background-image: var(--background-image-url-04);
+    background-size: 100% 100%;
+    color: rgba(0, 0, 0, 0);
+}
+
+.x8 {
+    background-color: #c11183;
+    background-image: var(--background-image-url-08);
+    background-size: 100% 100%;
+    color: rgba(0, 0, 0, 0);
+}
+
+.x16 {
+    background-color: #a0116e;
+    background-image: var(--background-image-url-16);
+    background-size: 100% 100%;
+    color: rgba(0, 0, 0, 0);
+}
+
+.x32 {
+    background-color: #510a23;
+    background-image: var(--background-image-url-32);
+    background-size: 100% 100%;
+    color: rgba(0, 0, 0, 0);
+}
+
+.x64 {
+    background-color: #6e1d52;
+    background-image: var(--background-image-url-64);
+    background-size: 100% 100%;
+    color: rgba(0, 0, 0, 0);
+}
+
+.x128 {
+    background-color: #7c0854;
+    background-image: var(--background-image-url-128);
+    background-size: 100% 100%;
+    color: rgba(0, 0, 0, 0);
+}
+
+.x256 {
+    background-color: #7d1057;
+    background-image: var(--background-image-url-256);
+    background-size: 100% 100%;
+    color: rgba(0, 0, 0, 0);
+}
+
+.x512 {
+    background-color: #883c6e;
+    background-image: var(--background-image-url-512);
+    background-size: 100% 100%;
+    color: rgba(0, 0, 0, 0);
+}
+
+.x1024 {
+    background-color: #7b3161;
+    background-image: var(--background-image-url-1024);
+    background-size: 100% 100%;
+    color: rgba(0, 0, 0, 0);
+}
+
+.x2048 {
+    background-color: #522040;
+    background-image: var(--background-image-url-2048);
+    background-size: 100% 100%;
+    color: rgba(0, 0, 0, 0);
+}
+
+.x4096{
+    background-color: #552c46;
+    background-image: var(--background-image-url-4096);
+    background-size: 100% 100%;
+    color: rgba(0, 0, 0, 0);
+}
+
+.x8192 {
+    background-color: #3e1830;
+    background-image: var(--background-image-url-8192);
+    background-size: 100% 100%;
+    color: rgba(0, 0, 0, 0);
+}
+
+/*This animation starts with the element fully outside the right boundary (transformed by translateX(100%)) and progresses to the original position (transformed by translateX(0)) as it reaches 100% completion.*/
+@keyframes slide-from-right {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/*The element fully outside the left boundary (transformed by translateX(-100%)) and progresses to the original position (transformed by translateX(0)) as it reaches 100% completion.*/
+@keyframes slide-from-left {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/*This animation starts with the element fully outside the top boundary (transformed by translateY(-100%)) and progresses to the original position (transformed by translateY(0)) as it reaches 100% completion.*/
+@keyframes slide-from-top {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/*The element fully outside the bottom boundary (transformed by translateY(100%)) and progresses to the original position (transformed by translateY(0)) as it reaches 100% completion.*/
+@keyframes slide-from-bottom {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/*creating variables to contain the images. */
+
+:root {
+    --background-image-url-02: url("./Zuitt Images/01-zuitt_2.png");
+    --background-image-url-04: url("./Zuitt Images/02-zuitt_4.png");
+    --background-image-url-08: url('./Zuitt Images/03-zuitt_8.png');
+    --background-image-url-16: url('./Zuitt Images/04-zuitt_16.png');
+    --background-image-url-32: url('./Zuitt Images/05-zuitt_32.png');
+    --background-image-url-64: url('./Zuitt Images/06-zuitt_64.png');
+    --background-image-url-128: url('./Zuitt Images/07-zuitt_128.png');
+    --background-image-url-256: url('./Zuitt Images/08-zuitt_256.png');
+    --background-image-url-512: url('./Zuitt Images/09-zuitt_512.png');
+    --background-image-url-1024: url('./Zuitt Images/10-zuitt_1024.png');
+    --background-image-url-2048: url('./Zuitt Images/11-zuitt_2048.png');
+    --background-image-url-4096: url('./Zuitt Images/12-zuitt_4096.png');
+    --background-image-url-8192: url('./Zuitt Images/13-zuitt_8192.png');
+}
+
+.container{
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    width: 400px;
+    margin: 0 auto;
+}
+
+.score-container, .share-button-container{
+    margin-left: 5px;
+    margin-right: 5px;
+
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 57px;
+    font-weight: 600;
+}
+
+.score-container {
+    align-items: flex-start;
+}
+
+.share-button-container{
+    align-items: flex-end;
+}
+
+#score {
+    font-weight: bold;
+    font-size: 26px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: end;
+}
+
+.share-label, score-label{
+    margin-bottom: 2px;
+}
+
+.share-button-container a img{
+    width: 30px;
+    height: auto;
+    margin-left: 5px;
+}
+
+footer{
+    background-color: #ff4d7f;
+    margin: 0 auto;
+    width: 90vw;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px;
+}
+
+i{
+    font-size: 25px;
+    color: #ffff;
+    margin: 0 10px 0 10px;
+}
+
+i:hover{
+    color: #883c6e;
+}
